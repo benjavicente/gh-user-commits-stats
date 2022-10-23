@@ -9,5 +9,5 @@ pnpm add -g github:benjavicente/gh-user-commits-stats
 ```
 
 ```bash
-gh-user-commits-stats open-source-uc
+gh-user-commits-stats -l open-source-uc
 ```
