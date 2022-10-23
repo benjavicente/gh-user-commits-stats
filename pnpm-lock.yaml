@@ -2,8 +2,6 @@ lockfileVersion: 5.4
 
 specifiers:
   args: ^5.0.3
-  gh-org-stats: 'link:'
-  gh-user-stats: 'link:'
   octokit: ^2.0.9
   prettier: ^2.7.1
   progress: ^2.0.3
@@ -11,8 +9,6 @@ specifiers:
 
 dependencies:
   args: 5.0.3
-  gh-org-stats: 'link:'
-  gh-user-stats: 'link:'
   octokit: 2.0.9
   progress: 2.0.3
   zx: 7.1.1
