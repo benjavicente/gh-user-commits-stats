@@ -4,6 +4,7 @@ import args from "args";
 import { getGitStats } from "../src/index.js";
 import fs from "fs";
 
+// TODO: args validation
 args
 	.option("login", "Github login")
 	.option("runAsync", "Run Git asynchronously", true)
@@ -14,7 +15,7 @@ args
 
 const { login, runAsync, verbose, recentRepositoriesCount, token, out } = args.parse(process.argv);
 
-if (!login) {
+if (!login || typeof login !== "string") {
 	console.error("Login is required");
 	process.exit(1);
 }
@@ -27,3 +28,4 @@ const stats = await getGitStats({ token, recentRepositoriesCount, login, runAsyn
 
 if (!fs.existsSync("./out")) fs.mkdirSync("./out");
 fs.writeFileSync(outputFile, JSON.stringify(stats, null, 2));
+console.info(`Stats saved to ${outputFile}`);
